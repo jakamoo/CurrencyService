@@ -1,15 +1,17 @@
 package com.profeed.DollarEuroRecorder.repository;
 
-import com.profeed.DollarEuroRecorder.entity.Record;
+import com.profeed.DollarEuroRecorder.entity.RecordEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface RecordRepository extends JpaRepository<Record,Long> {
+import java.util.List;
 
-    Record findBySource(String Url);
-    Record findByCurrencyType(String currencyType);
-    Record findByBuyPrice(float buyPrice);
-    Record findBySellPrice(float sellPrice);
+@Repository
+public interface RecordRepository extends JpaRepository<RecordEntity,Long> {
+
+    List<RecordEntity> findBySource(String url);
+    List<RecordEntity> findByCurrencyType(String currencyType);
+    List<RecordEntity> findByReleaseDate(String date);
+
 
 }

@@ -1,14 +1,17 @@
 package com.profeed.DollarEuroRecorder.dto;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class RecordDto {
-    private Date releaseDate;
-    private String currencyType;
     private String source;
-    private float buyPrice;
-    private float sellPrice;
+    private Double buyPrice;
+    private Double sellPrice;
+    private String releaseDate;
+    private String currencyType;
 }
